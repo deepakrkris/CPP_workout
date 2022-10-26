@@ -11,4 +11,8 @@
    * [advanced - Interpreter and VM project](http://www.craftinginterpreters.com/contents.html)
 
 # Training Week 1
-[day 1](https://github.com/deepakrkris/CppWork/issues/1)
+[Week 1](https://github.com/deepakrkris/CppWork/issues/1)
+   * reference
+   * templates
+   * pointers
+   * smart pointers 
