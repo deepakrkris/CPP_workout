@@ -44,9 +44,15 @@ bool testCallByReference() {
 
 int main()
 {
+  cout << endl << endl << " START " <<  " Call by reference " << endl;
+  cout << "------------------------------------------------------- " << endl;  
+
   assert( testCallByValue() == false );
   assert( testCallByAddress() == true );
   assert( testCallByReference() == true );
+
+  cout << "------------------------------------------------------- " << endl << endl ; 
+  cout << "------------------------------------------------------- " << endl << endl ;
   return 0;
 }
 
@@ -56,7 +62,6 @@ void swapv (int i, int j)
   t = i;
   i = j;
   j = t;
-  cout << i << "\t" << j;
 }
 
 void swapa (int *i, int *j)

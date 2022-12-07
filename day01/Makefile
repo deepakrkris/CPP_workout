@@ -11,4 +11,7 @@ clean:
 all: clean
 	for dir in $(examples); do echo $(headers); echo $$dir; out=$(OUTPUT_PATH)"/$$dir"".o"; logs=$(OUTPUT_PATH)"/log"; echo $$out; g++ -std=c++11 $$dir -o $$out; $$out>>$$logs ; done
 
+run:
+	for dir in $(examples); do echo $$dir; out=$(OUTPUT_PATH)"/$$dir"".o"; $$out ; done
+
 .PHONY: clean
