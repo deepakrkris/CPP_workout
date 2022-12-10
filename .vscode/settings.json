@@ -61,6 +61,8 @@
         "__tree": "cpp",
         "map": "cpp",
         "optional": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "list": "cpp",
+        "thread": "cpp"
     }
 }
