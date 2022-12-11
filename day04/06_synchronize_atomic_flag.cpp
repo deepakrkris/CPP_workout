@@ -52,7 +52,7 @@ class ValueProcessor {
  * @return int 
  */
 int main() {
-  cout << endl << endl << " START " <<  " Threads " << endl;
+  cout << endl << endl << " START " <<  " Thread : locks " << endl;
   cout << "------------------------------------------------------- " << endl;
 
   std::cout << std::endl;
