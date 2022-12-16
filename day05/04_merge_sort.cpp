@@ -62,7 +62,7 @@ void mergeSort(int array[], int const begin, int const end)
  
 int main()
 {
-    cout << endl << endl << " START " <<  " HELLO !!! " << endl;
+    cout << endl << endl << " START " <<  " Merge Sort !!! " << endl;
     cout << "------------------------------------------------------- " << endl;
 
     int numbers[] = { 33, 12, 24, 34, 2 };
