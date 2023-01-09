@@ -117,26 +117,31 @@ class LuigiAir : public AirLinePrice {
 };
 
 class PriceFactory {
-  map<string,shared_ptr<AirLinePrice>> instances = {};
+  static map<std::string,shared_ptr<AirLinePrice>> instances;
+
   public:
   PriceFactory() {
-    //instances.insert("United", make_shared<United>());
   }
-  
+
+  static void init() {
+    instances.insert({"United", make_shared<United>()});
+    instances.insert({"Delta", make_shared<Delta>()});
+    instances.insert({"Southwest", make_shared<SouthWest>()});
+    instances.insert({"LuigiAir", make_shared<LuigiAir>()});
+  }
+
   static shared_ptr<AirLinePrice> getPriceEstimator(string& airlineName) {
-    if (airlineName == "United") {
-      return make_shared<United>();
-    } else if (airlineName == "Delta") {
-      return make_shared<Delta>();
-    } else if (airlineName == "Southwest") {
-      return make_shared<SouthWest>();
-    } else if (airlineName == "LuigiAir") {
-      return make_shared<LuigiAir>();
+
+    if (instances.find(airlineName) == instances.end()) {
+      string error= "unidentified airline";
+      throw std::exception();
     }
-    string error= "unidentified airline";
-    throw std::exception();
+
+    return instances[airlineName];
   }
 };
+
+map<std::string,shared_ptr<AirLinePrice>> PriceFactory::instances = {};
 
 const vector<vector<string>> input = {
   {"United", "150.0", "Premium"},
@@ -151,6 +156,8 @@ enum airlineNames {
 };
 
 int main() {
+   PriceFactory::init();
+
    for (auto query : input) {
      auto airlineName = query[0];
      auto distanceStr = query[1];
